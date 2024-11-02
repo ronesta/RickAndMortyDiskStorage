@@ -16,6 +16,11 @@
 		E173BFB42CD6702000B56507 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = E173BFB32CD6702000B56507 /* Disk */; };
 		E173BFB62CD67B3C00B56507 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */; };
 		E173BFB82CD67B6300B56507 /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFB72CD67B6300B56507 /* CustomUILabel.swift */; };
+		E173BFBA2CD67C0200B56507 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFB92CD67C0200B56507 /* Character.swift */; };
+		E173BFBC2CD67C1300B56507 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFBB2CD67C1300B56507 /* NetworkManager.swift */; };
+		E173BFBE2CD67C2800B56507 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFBD2CD67C2800B56507 /* NetworkError.swift */; };
+		E173BFC02CD67C3500B56507 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFBF2CD67C3500B56507 /* ImageLoader.swift */; };
+		E173BFC22CD67EFA00B56507 /* DiskStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFC12CD67EFA00B56507 /* DiskStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		E173BFA92CD66D3900B56507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		E173BFB72CD67B6300B56507 /* CustomUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabel.swift; sourceTree = "<group>"; };
+		E173BFB92CD67C0200B56507 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		E173BFBB2CD67C1300B56507 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E173BFBD2CD67C2800B56507 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E173BFBF2CD67C3500B56507 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E173BFC12CD67EFA00B56507 /* DiskStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,11 @@
 				E173BF9F2CD66D3700B56507 /* ViewController.swift */,
 				E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */,
 				E173BFB72CD67B6300B56507 /* CustomUILabel.swift */,
+				E173BFB92CD67C0200B56507 /* Character.swift */,
+				E173BFBB2CD67C1300B56507 /* NetworkManager.swift */,
+				E173BFBD2CD67C2800B56507 /* NetworkError.swift */,
+				E173BFBF2CD67C3500B56507 /* ImageLoader.swift */,
+				E173BFC12CD67EFA00B56507 /* DiskStorageManager.swift */,
 				E173BFA42CD66D3900B56507 /* Assets.xcassets */,
 				E173BFA62CD66D3900B56507 /* LaunchScreen.storyboard */,
 				E173BFA92CD66D3900B56507 /* Info.plist */,
@@ -153,9 +168,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E173BFA02CD66D3700B56507 /* ViewController.swift in Sources */,
+				E173BFBE2CD67C2800B56507 /* NetworkError.swift in Sources */,
 				E173BF9C2CD66D3700B56507 /* AppDelegate.swift in Sources */,
 				E173BFB82CD67B6300B56507 /* CustomUILabel.swift in Sources */,
+				E173BFBC2CD67C1300B56507 /* NetworkManager.swift in Sources */,
+				E173BFC02CD67C3500B56507 /* ImageLoader.swift in Sources */,
+				E173BFBA2CD67C0200B56507 /* Character.swift in Sources */,
 				E173BF9E2CD66D3700B56507 /* SceneDelegate.swift in Sources */,
+				E173BFC22CD67EFA00B56507 /* DiskStorageManager.swift in Sources */,
 				E173BFB62CD67B3C00B56507 /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
