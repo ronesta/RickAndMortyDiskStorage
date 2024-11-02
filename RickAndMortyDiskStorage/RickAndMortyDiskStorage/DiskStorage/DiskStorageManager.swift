@@ -17,7 +17,7 @@ final class DiskStorageManager {
         do {
             try Disk.save(characters, to: .documents, as: "characters.json")
         } catch {
-            print("Не удалось сохранить данные: \(error.localizedDescription)")
+            print("Failed to save data: \(error.localizedDescription)")
         }
     }
 
@@ -26,7 +26,7 @@ final class DiskStorageManager {
             let characters = try Disk.retrieve("characters.json", from: .documents, as: [Character].self)
             return characters
         } catch {
-            print("Ошибка при загрузке данных: \(error.localizedDescription)")
+            print("Error loading data: \(error.localizedDescription)")
             return nil
         }
     }
@@ -35,7 +35,7 @@ final class DiskStorageManager {
         do {
             try Disk.remove("characters.json", from: .documents)
         } catch {
-            print("Ошибка при удалении данных: \(error.localizedDescription)")
+            print("Error deleting data: \(error.localizedDescription)")
         }
     }
 
@@ -43,7 +43,7 @@ final class DiskStorageManager {
         do {
             try Disk.save(data, to: .documents, as: "\(key).png")
         } catch {
-            print("Не удалось сохранить изображение: \(error.localizedDescription)")
+            print("Failed to save image: \(error.localizedDescription)")
         }
     }
 
@@ -52,7 +52,7 @@ final class DiskStorageManager {
             let imageData = try Disk.retrieve("\(key).png", from: .documents, as: Data.self)
             return imageData
         } catch {
-            print("Ошибка при загрузке изображения: \(error.localizedDescription)")
+            print("Error loading image: \(error.localizedDescription)")
             return nil
         }
     }
@@ -61,7 +61,7 @@ final class DiskStorageManager {
         do {
             try Disk.remove("\(key).png", from: .documents)
         } catch {
-            print("Ошибка при удалении изображения: \(error.localizedDescription)")
+            print("Error deleting image: \(error.localizedDescription)")
         }
     }
 }

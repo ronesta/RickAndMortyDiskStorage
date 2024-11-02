@@ -10,7 +10,6 @@ import Foundation
 final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
-    var counter = 1
 
     private let urlString = "https://rickandmortyapi.com/api/character"
 
@@ -37,8 +36,6 @@ final class NetworkManager {
             do {
                 let character = try JSONDecoder().decode(PostCharacters.self, from: data)
                 completion(.success(character.results))
-                print("Load Data", self.counter)
-                self.counter += 1
             } catch {
                 print("Decoding error: \(error.localizedDescription)")
                 completion(.failure(error))
@@ -46,4 +43,3 @@ final class NetworkManager {
         }.resume()
     }
 }
-

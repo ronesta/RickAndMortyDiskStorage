@@ -72,21 +72,53 @@
 		E173BF9A2CD66D3700B56507 /* RickAndMortyDiskStorage */ = {
 			isa = PBXGroup;
 			children = (
-				E173BF9B2CD66D3700B56507 /* AppDelegate.swift */,
-				E173BF9D2CD66D3700B56507 /* SceneDelegate.swift */,
-				E173BF9F2CD66D3700B56507 /* ViewController.swift */,
-				E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */,
-				E173BFB72CD67B6300B56507 /* CustomUILabel.swift */,
-				E173BFB92CD67C0200B56507 /* Character.swift */,
-				E173BFBB2CD67C1300B56507 /* NetworkManager.swift */,
-				E173BFBD2CD67C2800B56507 /* NetworkError.swift */,
-				E173BFBF2CD67C3500B56507 /* ImageLoader.swift */,
-				E173BFC12CD67EFA00B56507 /* DiskStorageManager.swift */,
+				E173BFC32CD69EA900B56507 /* Application */,
+				E173BFC42CD69EBA00B56507 /* Views */,
+				E173BFC52CD69ECA00B56507 /* Networking */,
+				E173BFC62CD69EE600B56507 /* DiskStorage */,
 				E173BFA42CD66D3900B56507 /* Assets.xcassets */,
 				E173BFA62CD66D3900B56507 /* LaunchScreen.storyboard */,
 				E173BFA92CD66D3900B56507 /* Info.plist */,
 			);
 			path = RickAndMortyDiskStorage;
+			sourceTree = "<group>";
+		};
+		E173BFC32CD69EA900B56507 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E173BF9B2CD66D3700B56507 /* AppDelegate.swift */,
+				E173BF9D2CD66D3700B56507 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E173BFC42CD69EBA00B56507 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E173BF9F2CD66D3700B56507 /* ViewController.swift */,
+				E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */,
+				E173BFB72CD67B6300B56507 /* CustomUILabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E173BFC52CD69ECA00B56507 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E173BFB92CD67C0200B56507 /* Character.swift */,
+				E173BFBB2CD67C1300B56507 /* NetworkManager.swift */,
+				E173BFBD2CD67C2800B56507 /* NetworkError.swift */,
+				E173BFBF2CD67C3500B56507 /* ImageLoader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E173BFC62CD69EE600B56507 /* DiskStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E173BFC12CD67EFA00B56507 /* DiskStorageManager.swift */,
+			);
+			path = DiskStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +131,7 @@
 				E173BF942CD66D3700B56507 /* Sources */,
 				E173BF952CD66D3700B56507 /* Frameworks */,
 				E173BF962CD66D3700B56507 /* Resources */,
+				E173BFC72CD69F2000B56507 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -161,6 +194,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E173BFC72CD69F2000B56507 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E173BF942CD66D3700B56507 /* Sources */ = {
