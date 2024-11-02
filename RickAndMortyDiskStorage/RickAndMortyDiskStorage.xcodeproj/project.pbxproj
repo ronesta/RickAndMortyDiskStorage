@@ -13,6 +13,9 @@
 		E173BFA52CD66D3900B56507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E173BFA42CD66D3900B56507 /* Assets.xcassets */; };
 		E173BFA82CD66D3900B56507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E173BFA62CD66D3900B56507 /* LaunchScreen.storyboard */; };
 		E173BFB12CD66DAA00B56507 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E173BFB02CD66DAA00B56507 /* SnapKit */; };
+		E173BFB42CD6702000B56507 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = E173BFB32CD6702000B56507 /* Disk */; };
+		E173BFB62CD67B3C00B56507 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */; };
+		E173BFB82CD67B6300B56507 /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173BFB72CD67B6300B56507 /* CustomUILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,8 @@
 		E173BFA42CD66D3900B56507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E173BFA72CD66D3900B56507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E173BFA92CD66D3900B56507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		E173BFB72CD67B6300B56507 /* CustomUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E173BFB12CD66DAA00B56507 /* SnapKit in Frameworks */,
+				E173BFB42CD6702000B56507 /* Disk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 				E173BF9B2CD66D3700B56507 /* AppDelegate.swift */,
 				E173BF9D2CD66D3700B56507 /* SceneDelegate.swift */,
 				E173BF9F2CD66D3700B56507 /* ViewController.swift */,
+				E173BFB52CD67B3C00B56507 /* CharacterTableViewCell.swift */,
+				E173BFB72CD67B6300B56507 /* CustomUILabel.swift */,
 				E173BFA42CD66D3900B56507 /* Assets.xcassets */,
 				E173BFA62CD66D3900B56507 /* LaunchScreen.storyboard */,
 				E173BFA92CD66D3900B56507 /* Info.plist */,
@@ -84,6 +92,7 @@
 			name = RickAndMortyDiskStorage;
 			packageProductDependencies = (
 				E173BFB02CD66DAA00B56507 /* SnapKit */,
+				E173BFB32CD6702000B56507 /* Disk */,
 			);
 			productName = RickAndMortyDiskStorage;
 			productReference = E173BF982CD66D3700B56507 /* RickAndMortyDiskStorage.app */;
@@ -115,6 +124,7 @@
 			mainGroup = E173BF8F2CD66D3700B56507;
 			packageReferences = (
 				E173BFAF2CD66DAA00B56507 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E173BFB22CD6702000B56507 /* XCRemoteSwiftPackageReference "Disk" */,
 			);
 			productRefGroup = E173BF992CD66D3700B56507 /* Products */;
 			projectDirPath = "";
@@ -144,7 +154,9 @@
 			files = (
 				E173BFA02CD66D3700B56507 /* ViewController.swift in Sources */,
 				E173BF9C2CD66D3700B56507 /* AppDelegate.swift in Sources */,
+				E173BFB82CD67B6300B56507 /* CustomUILabel.swift in Sources */,
 				E173BF9E2CD66D3700B56507 /* SceneDelegate.swift in Sources */,
+				E173BFB62CD67B3C00B56507 /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E173BFB22CD6702000B56507 /* XCRemoteSwiftPackageReference "Disk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/saoudrizwan/Disk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -375,6 +395,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E173BFAF2CD66DAA00B56507 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E173BFB32CD6702000B56507 /* Disk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E173BFB22CD6702000B56507 /* XCRemoteSwiftPackageReference "Disk" */;
+			productName = Disk;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
