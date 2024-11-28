@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.characters = character
                     self?.tableView.reloadData()
-                    DiskStorageManager.shared.saveCharacters(characters: character)
+                    DiskStorageManager.shared.saveCharacters(character)
                 }
             case .failure(let error):
                 print("Failed to fetch characters: \(error.localizedDescription)")

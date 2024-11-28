@@ -6,51 +6,69 @@
 //
 
 import Foundation
-import Disk
 
 final class DiskStorageManager {
     static let shared = DiskStorageManager()
-
+    private let fileManager = FileManager.default
     private init() {}
 
-    func saveCharacters(characters: [Character]) {
+    private var documentsDirectory: URL {
+        return fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+
+    func saveCharacters(_ characters: [Character]) {
+        let fileURL = documentsDirectory.appendingPathComponent("characters.json")
         do {
-            try Disk.save(characters, to: .documents, as: "characters.json")
+            let data = try JSONEncoder().encode(characters)
+            try data.write(to: fileURL)
         } catch {
-            print("Failed to save data: \(error.localizedDescription)")
+            print("Failed to save characters: \(error.localizedDescription)")
         }
     }
 
     func loadCharacters() -> [Character]? {
+        let fileURL = documentsDirectory.appendingPathComponent("characters.json")
+        guard fileManager.fileExists(atPath: fileURL.path) else {
+            return nil
+        }
         do {
-            let characters = try Disk.retrieve("characters.json", from: .documents, as: [Character].self)
+            let data = try Data(contentsOf: fileURL)
+            let characters = try JSONDecoder().decode([Character].self, from: data)
             return characters
         } catch {
-            print("Error loading data: \(error.localizedDescription)")
+            print("Error loading characters: \(error.localizedDescription)")
             return nil
         }
     }
 
     func deleteCharacters() {
+        let fileURL = documentsDirectory.appendingPathComponent("characters.json")
         do {
-            try Disk.remove("characters.json", from: .documents)
+            if fileManager.fileExists(atPath: fileURL.path) {
+                try fileManager.removeItem(at: fileURL)
+            }
         } catch {
-            print("Error deleting data: \(error.localizedDescription)")
+            print("Error deleting characters: \(error.localizedDescription)")
         }
     }
 
     func saveImage(_ data: Data, key: String) {
+        let fileURL = documentsDirectory.appendingPathComponent("\(key)")
         do {
-            try Disk.save(data, to: .documents, as: "\(key).png")
+            try data.write(to: fileURL)
         } catch {
             print("Failed to save image: \(error.localizedDescription)")
         }
     }
 
     func loadImage(key: String) -> Data? {
+        let fileURL = documentsDirectory.appendingPathComponent("\(key)")
+        guard fileManager.fileExists(atPath: fileURL.path) else {
+            return nil
+        }
         do {
-            let imageData = try Disk.retrieve("\(key).png", from: .documents, as: Data.self)
-            return imageData
+            let data = try Data(contentsOf: fileURL)
+            return data
         } catch {
             print("Error loading image: \(error.localizedDescription)")
             return nil
@@ -58,8 +76,11 @@ final class DiskStorageManager {
     }
 
     func deleteImage(key: String) {
+        let fileURL = documentsDirectory.appendingPathComponent("\(key)")
         do {
-            try Disk.remove("\(key).png", from: .documents)
+            if fileManager.fileExists(atPath: fileURL.path) {
+                try fileManager.removeItem(at: fileURL)
+            }
         } catch {
             print("Error deleting image: \(error.localizedDescription)")
         }
