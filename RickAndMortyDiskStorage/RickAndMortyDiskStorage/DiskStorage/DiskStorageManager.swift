@@ -9,12 +9,13 @@ import Foundation
 
 final class DiskStorageManager {
     static let shared = DiskStorageManager()
-    private let fileManager = FileManager.default
-    private init() {}
 
+    private let fileManager = FileManager.default
     private var documentsDirectory: URL {
         return fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
+
+    private init() {}
 
     func saveCharacters(_ characters: [Character]) {
         let fileURL = documentsDirectory.appendingPathComponent("characters.json")
@@ -28,12 +29,15 @@ final class DiskStorageManager {
 
     func loadCharacters() -> [Character]? {
         let fileURL = documentsDirectory.appendingPathComponent("characters.json")
+
         guard fileManager.fileExists(atPath: fileURL.path) else {
             return nil
         }
+
         do {
             let data = try Data(contentsOf: fileURL)
             let characters = try JSONDecoder().decode([Character].self, from: data)
+
             return characters
         } catch {
             print("Error loading characters: \(error.localizedDescription)")
@@ -43,6 +47,7 @@ final class DiskStorageManager {
 
     func deleteCharacters() {
         let fileURL = documentsDirectory.appendingPathComponent("characters.json")
+
         do {
             if fileManager.fileExists(atPath: fileURL.path) {
                 try fileManager.removeItem(at: fileURL)
@@ -54,6 +59,7 @@ final class DiskStorageManager {
 
     func saveImage(_ data: Data, key: String) {
         let fileURL = documentsDirectory.appendingPathComponent("\(key)")
+
         do {
             try data.write(to: fileURL)
         } catch {
@@ -63,9 +69,11 @@ final class DiskStorageManager {
 
     func loadImage(key: String) -> Data? {
         let fileURL = documentsDirectory.appendingPathComponent("\(key)")
+
         guard fileManager.fileExists(atPath: fileURL.path) else {
             return nil
         }
+
         do {
             let data = try Data(contentsOf: fileURL)
             return data
@@ -77,6 +85,7 @@ final class DiskStorageManager {
 
     func deleteImage(key: String) {
         let fileURL = documentsDirectory.appendingPathComponent("\(key)")
+
         do {
             if fileManager.fileExists(atPath: fileURL.path) {
                 try fileManager.removeItem(at: fileURL)
